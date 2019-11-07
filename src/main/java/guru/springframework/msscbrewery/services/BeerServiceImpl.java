@@ -30,10 +30,14 @@ public class BeerServiceImpl implements BeerService {
 
     @Override
     public BeerDto saveNewBeer(BeerDto beerDto) {
-        System.out.println("beerDto = " + beerDto.getBeerName());
         log.debug(beerDto.toString());
         return BeerDto.builder()
                 .id(UUID.randomUUID())
                 .build();
+    }
+
+    @Override
+    public void updateBeer(UUID beerId, BeerDto beerDto) {
+        log.debug("updating beer " + beerId.toString() + "-" + beerDto.getBeerName());
     }
 }
