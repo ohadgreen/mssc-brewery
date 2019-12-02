@@ -40,4 +40,11 @@ public class BeerServiceImpl implements BeerService {
     public void updateBeer(UUID beerId, BeerDto beerDto) {
         log.debug("updating beer " + beerId.toString() + "-" + beerDto.getBeerName());
     }
+
+    @Override
+    public void deleteBeer(UUID beerId) {
+        log.debug("deleting beer " + beerId);
+    }
+
+
 }
